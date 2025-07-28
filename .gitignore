@@ -1,0 +1,109 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch
+*.pth
+*.pt
+checkpoints/
+saved_models/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large files and datasets
+*.zip
+*.tar.gz
+*.rar
+*.7z
+data/*/raw/
+data/*/processed/
+*.h5
+*.hdf5
+
+# Large data files (>10MB)
+data/baby/image_feat.npy
+data/baby/image_feat_original.npy
+data/baby/text_feat.npy
+data/baby/text_feat_original.npy
+data/baby/image_interest_10_10.pt
+data/baby/text_interest_10_10.pt
+data/baby/mm_adj_10.pt
+data/baby/mm_attractive_2.pt
+data/baby/mm_attractive_2_R.pt
+data/baby/user_graph_dict.npy
+
+# All .npy and .pt files in data directories
+data/**/*.npy
+data/**/*.pt
+
+# Logs (keep structure but ignore large log files)
+*.log
+log/*.log
+!log/.gitkeep
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Model outputs
+outputs/
+results/
+wandb/
+
+# Cache
+.cache/
+*.cache
+
+# Conda
+.conda/
+
+# Exclude non-project directories
+PDF/
+drfuse-main/

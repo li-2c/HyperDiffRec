@@ -1,0 +1,70 @@
+ITEM_ID_FIELD: item_id:token
+NEG_PREFIX: neg__
+TIME_FIELD: null
+USER_ID_FIELD: user_id:token
+checkpoint_dir: saved
+data_path: ./data/
+embedding_size: 160
+end2end: false
+epochs: 50
+eval_batch_size: 2048
+eval_step: 1
+field_separator: "\t"
+filter_out_cod_start_users: true
+gpu_id: 0
+hidden_dropout_prob: 0.1
+hidden_size: 4
+hyper_parameters:
+- seed
+inter_splitting_label: x_label
+is_multimodal_model: true
+layer_norm_eps: 1e-12
+learner: adam
+learning_rate: 0.0011
+learning_rate_scheduler:
+- 0.96
+- 25
+max_img_size: 256
+max_position_embeddings: 512
+max_txt_len: 32
+metrics:
+- Recall
+- NDCG
+- Precision
+- MAP
+multi_metric_evaluation:
+  enable: true
+  metric_weights:
+    NDCG@10: 0.4
+    NDCG@20: 0.6
+    Recall@10: 0.8
+    Recall@20: 1.0
+  primary_metric: Recall@20
+  tie_breaking_metrics:
+  - Recall@10
+  - NDCG@20
+  - NDCG@10
+  tie_threshold: 1e-6
+  weighted_score_mode: false
+pad_token_id: 0
+recommend_topk: recommend_topk/
+req_training: true
+save_recommended_topk: true
+seed:
+- 999
+stopping_step: 6
+topk:
+- 5
+- 10
+- 20
+- 50
+train_batch_size: 2048
+training_neg_sample_num: 1
+type_vocab_size: 2
+use_full_sampling: false
+use_gpu: true
+use_neg_sampling: true
+use_raw_features: false
+valid_metric: Recall@20
+vocab_size: 30522
+weight_decay: 0.0

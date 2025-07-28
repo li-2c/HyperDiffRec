@@ -1,0 +1,59 @@
+# HyperDiffRec Model Configuration
+
+cl_loss:
+- 0.01
+cl_loss2:
+- 0.01
+
+embedding_size: 160
+n_ui_layers: 2
+n_layers: 1
+lambda_coeff: 0.9
+knn_k: 10
+
+learning_rate: 0.00131
+reg_weight: 1.0e-05
+learning_rate_scheduler:
+- 0.96
+- 25
+
+hyper_parameters:
+- cl_loss
+- cl_loss2
+
+
+enable_completion: true
+use_advanced_diffusion: true
+
+completion_embed_dim: 160
+completion_steps: 50
+noise_scale: 0.03
+fusion_alpha: 0.3
+time_step_ratio: 0.1
+fallback_noise: 0.05
+
+
+enable_hypergraph: true
+
+hypergraph_config:
+  hyperedge_types:
+    multimodal_edge: true
+    interest_aggregation: true
+    completion_quality: true
+    user_item_attribute: true
+
+  max_hyperedge_size: 8
+  hyperedge_sampling_ratio: 0.3
+  similarity_threshold: 0.5
+
+  hgcn_layers: 1
+  hgcn_dropout: 0.1
+  hgcn_activation: "relu"
+
+  fusion_strategy: "attention"
+  hypergraph_weight: 0.3
+  fusion_dropout: 0.1
+
+  performance_threshold: 0.100
+  auto_fallback: true
+  check_interval: 5
